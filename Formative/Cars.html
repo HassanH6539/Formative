@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<style>
+table {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  color: white;
+  background-color: black;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: x-large;
+}
+body {
+    color: white;
+    background-color: black;
+    background-image: black;
+    font-size: xx-large;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+#searchResults {
+    margin: 20px;
+}
+table, td, th {
+  border: 1px solid white;
+}
+td {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+   Types of supercars and their manufacturers
+<table>
+    <th>Car brand</th>
+    <th>Car picture</th>
+    <th>Description</th>
+  <tr>
+    <td>Lamborghini</td>
+    <td><img src = "/Users/hassanhaider/Downloads/Lamborghini.jpeg", height="200", width="400"></td>
+    <td>Automobili Lamborghini S.p.A.is an Italian manufacturer of luxury sports cars and SUVs based in Sant'Agata Bolognese. 
+        The company is owned by the Volkswagen Group through its subsidiary Audi. Automobili Lamborghini S.p.A.</td>
+    </tr>
+    <td>Ferrari</td>
+    <td><img src = "/Users/hassanhaider/Downloads/Ferrari.jpeg", height="200", width="400"></td>
+    <td>CFerrari S.p.A. is an Italian luxury sports car manufacturer based in Maranello, Italy. Founded in 1939 by Enzo Ferrari (1898–1988),
+         the company built its first car in 1940, adopted its current name in 1945, and began to produce its current line of road cars in 1947.</td>
+    <tr>
+    <td>Porche</td>
+    <td><img src = "/Users/hassanhaider/Downloads/Porche.jpeg", height="200", width="400"></td>
+    <td>Porsche is a renowned German automobile manufacturer with an emphasis in high-performance luxury sports cars, SUVs and sedans. 
+        Founded by Ferdinand Porsche in 1931, what started as a development work and consulting turned into the first Porsche, 
+         the Porsche 64 in 1939 after their success in designing the original Volkswagen Beetle. </td>
+    </tr>
+    <td>Koenigsegg</td>
+    <td> <img src = "/Users/hassanhaider/Downloads/Koenigsegg.jpeg", height="200", width="400"></td>
+    <td>Koenigsegg Automotive AB is a Swedish manufacturer of high-performance sports cars based in Ängelholm, Skåne County, Sweden.</td>
+    <tr>
+    <td>Bugatti</td>
+    <td> <img src = "/Users/hassanhaider/Downloads/Bugatti2.jpeg", height="200", width="400"></td>
+    <td>Automobiles Ettore Bugatti was a German then French manufacturer of high-performance automobiles. 
+        The company was founded in 1909 in the then-German city of Molsheim, Alsace, by the Italian-born industrial designer Ettore Bugatti. 
+    </td>
+    </tr>
+    <tr>
+    <td>Mercedes</td>
+    <td><img src = "/Users/hassanhaider/Downloads/Mercedes.jpeg", height="200", width="400"></td>
+    <td>Mercedes-Benz commonly referred to as Mercedes and sometimes as Benz, 
+        is a German luxury and commercial vehicle automotive brand established in 1926</td>
+    </tr>
+    <td>
+
+    </td>
+</table>
+<style>
+  button {
+      color: rgb(246, 246, 246);
+      background-color: black;
+      font-size: 20px;
+      height: 50px;
+      width: 392px;
+  }
+  button:hover {
+      color: black;
+      background-color: white;
+  }
+  
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="search()">Search</button>
+    </div>
+    <div id="searchResults">
+        <!-- Search results will be displayed here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+<body>
+<button>More about Lamborghini</button>
+<button>More about Ferrari</button>
+<button>More about Porche</button>
+<button>More about Koenigsegg</button>
+<button>More about Bugatti</button>
+<button>More about Mercedes</button>
+<button>Other car brands</button>
+<script>// Sample data for search
+    const data = [
+        "Aston Martin",
+        "Pagani",
+        "BMW",
+        "Alpha Romeo",
+        "Zenovo",
+        "Mclaren",
+        "Nissan",
+        "Dodge",
+        "Chevorlet",
+        "Audi",
+    ];
+    
+    function search() {
+        const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        const searchResults = document.getElementById("searchResults");
+    
+        // Clear previous search results
+        searchResults.innerHTML = "";
+    
+        if (searchTerm.trim() === "") {
+            searchResults.innerHTML = "Please enter a search term.";
+            return;
+        }
+    
+        const results = data.filter(item => item.toLowerCase().includes(searchTerm));
+    
+        if (results.length === 0) {
+            searchResults.innerHTML = "No results found.";
+        } else {
+            const ul = document.createElement("ul");
+            results.forEach(result => {
+                const li = document.createElement("li");
+                li.textContent = result;
+                ul.appendChild(li);
+            });
+            searchResults.appendChild(ul);
+        }
+    }</script>
+
+</body>
+</html>
