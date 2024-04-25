@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercar Quiz</title>
+</head>
+<body>
+
+    <h2>Supercar Quiz</h2>
+    <div id="question1">
+        <h3>Question 1: What is the top speed of a Bugatti Chiron?</h3>
+        <label><input type="radio" name="q1" value="a">a 200 mph</label><br>
+        <label><input type="radio" name="q1" value="b">b 300 mph</label><br>
+        <label><input type="radio" name="q1" value="c">c 400 mph</label><br>
+    </div>
+    
+    <div id="question2">
+        <h3>Question 2: Which company owns the Lamborghini brand?</h3>
+        <label><input type="radio" name="q2" value="a">a Ferrari</label><br>
+        <label><input type="radio" name="q2" value="b">b Volkswagen Group</label><br>
+        <label><input type="radio" name="q2" value="c">c Ford</label><br>
+    </div>
+    
+    <div id="question3">
+        <h3>Question 3: Who created Lamborghini?</h3>
+        <label><input type="radio" name="q3" value="a">a Enzo Ferrari</label><br>
+        <label><input type="radio" name="q3" value="b">b Ferruccio Lamborghini</label><br>
+        <label><input type="radio" name="q3" value="c">c Henry Ford</label><br>
+
+    <div id="question4">
+        <h3>Question 4: When was Enzo Ferrari Born?</h3>
+        <label><input type="radio" name="q4" value="a">a 1898</label><br>
+        <label><input type="radio" name="q4" value="b">b 1899</label><br>
+        <label><input type="radio" name="q4" value="c">c 1900</label><br>
+
+     <div id="question5">
+        <h3>Question 5: Which car was made first?</h3>
+        <label><input type="radio" name="q5" value="a">a Koenigsegg Agera R</label><br>
+        <label><input type="radio" name="q5" value="b">b Ferrari Laferrari</label><br>
+        <label><input type="radio" name="q5" value="c">c Lamborghini Sesto Elemento</label><br>
+    <br>
+    <button onclick="submitQuiz()">Submit Quiz</button>
+
+    <script>
+        function submitQuiz() {
+            
+            const correctAnswers = {
+                q1: 'b', 
+                q2: 'b',  
+                q3: 'b',
+                q4: 'a',
+                q5: 'c',
+            };
+
+            let score = 0;
+            if (document.querySelector('input[name="q1"]:checked').value === correctAnswers.q1) {
+                score++;
+            }
+            if (document.querySelector('input[name="q2"]:checked').value === correctAnswers.q2) {
+                score++;
+            }
+            if (document.querySelector('input[name="q3"]:checked').value === correctAnswers.q3) {
+                score++;
+            }
+            if (document.querySelector('input[name="q4"]:checked').value === correctAnswers.q4) {
+                score++;
+            }
+            if (document.querySelector('input[name="q5"]:checked').value === correctAnswers.q5) {
+                score++;
+            }
+            
+            alert(`You scored ${score} out of ${Object.keys(correctAnswers).length}. Check your answers.`);
+        }
+    </script>
+</body>
+<style>
+    body {
+        background-color: black;
+        color: azure;
+    }
+</style>
+</html>
