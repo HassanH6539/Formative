@@ -1,0 +1,10 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Example for multiple columns */
+    column-gap: 20px; /* Adjusts the gap between columns specifically */
+}
+
+.grid-item img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+}
